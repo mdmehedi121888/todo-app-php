@@ -1,3 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.hideBtn').click(function() {
+                $('.hideText').hide();
+            })
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
 <?php
 include 'connect.php';
 include_once 'index.php';
@@ -41,7 +63,7 @@ mysqli_close($conn); // Close the database connection
         <?php
         // Check if success session variable is set
         if (isset($_SESSION['success']) && $_SESSION['success'] === true) {
-            echo "<div class='alert alert-success' role='alert'>New record created successfully</div>";
+            echo "<div class='hideText alert alert-success' role='alert'>New record created successfully <button class='hideBtn float-end'>X</button></div>";
             // Unset the session variable after displaying the message
             unset($_SESSION['success']);
         }

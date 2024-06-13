@@ -15,7 +15,7 @@ if (isset($_GET['id'])) {
     if (mysqli_query($conn, $sql)) {
         // If the deletion is successful, redirect back to the page displaying the todos
 
-        header("Location: create_todo.php");
+        header("Location: display_todo.php");
         exit(); // Ensure no further code execution after redirection
     } else {
         // If an error occurs, display an error message
